@@ -36,5 +36,12 @@ jobs:
               with:
                 push: true
                 tags: fedol/devops-project:latest
-
-            
+            - name: deploy
+              uses: appleboy/ssh-action@master
+              with:
+                    host: ${{secrets.HOST}}
+                    username: ${{secrets.USERNAME}}
+                    password: ${{secrets.PASSWORD}}
+                    script: |
+                        docker pull ${{secrets.DOCKERHUB_USERNAME}}/devops-project:latest
+                        docker run -d -p 3000 -name devops-project ${{secrets.DOCKERHUB_USERNAME}}/devops-project:latest
