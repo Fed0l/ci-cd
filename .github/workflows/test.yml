@@ -20,7 +20,7 @@ jobs:
                 node-version: '14'
             
             - name: Install dependencies
-              run: ipm install
+              run: npm install
             
             - name: buid docker image
               run: docker build -t devops-project
