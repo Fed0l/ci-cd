@@ -40,7 +40,7 @@ jobs:
             - name: deploy
               uses: appleboy/ssh-action@master
               with:
-                host: ${{ secrets.Host }}
+                host: ${{ secrets.HOST }}
                 username: ${{ secrets.USERNAME }}
                 password: ${{ secrets.PASSWORD }}
 
