@@ -35,7 +35,7 @@ jobs:
               uses: docker/build-push-action@v6
               with:
                 push: true
-                tags: fedol/devops-project:latest
+                tags: fedros316/devops-project:latest
 
             - name: deploy
               uses: appleboy/ssh-action@master
